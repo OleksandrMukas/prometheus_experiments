@@ -66,11 +66,24 @@ systemctl daemon-reload
 restorecon -v /usr/local/bin/prometheus
 restorecon -Rv $PROMETHEUS_FOLDER_CONFIG
 restorecon -Rv $PROMETHEUS_FOLDER_TSDB
+
 #port 9090 busy - Oracle Cockpit
-if systemctl is-active --quiet cockpit; then
-	systemctl stop cockpit
-	systemctl disable cockpit
+# Перевіряємо, чи socket активний
+if systemctl is-active --quiet cockpit.socket; then
+echo "Stopping Cockpit..."
+sudo systemctl stop cockpit.socket
+sudo systemctl disable cockpit.socket
 fi
+
+# Додатково можна зупинити сам сервіс для надійності
+if systemctl is-active --quiet cockpit.service; then
+sudo systemctl stop cockpit.service
+sudo systemctl disable cockpit.service
+fi
+
+echo "Cockpit fully disabled."
+
+sleep 2
 
 systemctl start prometheus
 systemctl enable prometheus
