@@ -7,6 +7,6 @@ This script tested on Oracle Linux 10.1
 
 Or run Prometheus on enother port - 9091 or 9092 etc.
 
-###BIN     -> /usr/local/bin/prometheus
-###CONF    -> /etc/prometheus/prometheus.yml
-###DATA    -> /var/lib/prometheus/data
+### BIN     -> /usr/local/bin/prometheus
+### CONF    -> /etc/prometheus/prometheus.yml
+### DATA    -> /var/lib/prometheus/data
