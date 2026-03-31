@@ -89,4 +89,7 @@ systemctl start prometheus
 systemctl enable prometheus
 sleep 2
 systemctl status prometheus --no-pager
+
+export PATH=/usr/local/bin:$PATH
 prometheus --version
+which prometheus
