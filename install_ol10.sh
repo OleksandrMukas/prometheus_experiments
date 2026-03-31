@@ -10,8 +10,8 @@ PROMETHEUS_FOLDER_TSDB="/var/lib/prometheus"
 PROMETHEUS_FOLDER_TSDATA="/var/lib/prometheus/data"
 
 # tar,wget has been in Oracle Linux 10.1 in default, its for sure
-dnf update -y -q || exit 1
-dnf install -y -q tar wget || exit 1
+dnf update -y || exit 1
+dnf install -y tar wget || exit 1
 cd /tmp
 wget -q --show-progress https://github.com/prometheus/prometheus/releases/download/v$PROMETHEUS_VERSION/prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz
 tar -xvzf prometheus-$PROMETHEUS_VERSION.linux-amd64.tar.gz
