@@ -9,7 +9,7 @@
 
 можна перейти в sudo su -> # щоб писати без sudo
 
-```bash
+```console
 mv prometheus /usr/local/bin
 mkdir /etc/prometheus
 mv prometheus.yml /etc/prometheus
