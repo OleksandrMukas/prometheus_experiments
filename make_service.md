@@ -24,7 +24,7 @@ DATA  -> /var/lib/prometheus/data
 
 Створюємо юзера для запуску сервісу і видаємо права на директорії і BIN файл:
 
-```bash
+```shell
 useradd -rs /bin/false prometheus
 chown prometheus:prometheus /usr/local/bin/prometheus
 chown -R prometheus:prometheus /etc/prometheus
