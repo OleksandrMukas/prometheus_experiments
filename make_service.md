@@ -67,7 +67,6 @@ vim /etc/systemd/system/prometheus.service
 ```
 
 ```bash
-```bash
 [Unit]
 Description=Prometheus Server
 After=network.target
